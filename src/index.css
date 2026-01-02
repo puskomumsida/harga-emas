@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --color-gold-300: #fad961;
+  --color-gold-400: #f7c948;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b4942a;
+  --color-gold-glow: rgba(212, 175, 55, 0.4);
+
+  --color-bg-950: #05080f;
+  --color-bg-900: #0a0f1c;
+  --color-bg-800: #131b2e;
+  --color-bg-700: #1c2640;
+
+  --color-text-50: #f9fafb;
+  --color-text-100: #f3f4f6;
+  --color-text-300: #d1d5db;
+  --color-text-400: #9ca3af;
+
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+
+  --font-sans: "Outfit", sans-serif;
+
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 20px var(--color-gold-glow);
+  --glass-bg: rgba(19, 27, 46, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-950);
+  background-image: radial-gradient(
+      circle at 15% 50%,
+      rgba(212, 175, 55, 0.08) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(28, 38, 64, 0.4) 0%,
+      transparent 40%
+    );
+  color: var(--color-text-100);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    var(--color-gold-300) 0%,
+    var(--color-gold-500) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
